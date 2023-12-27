@@ -7,7 +7,7 @@ source: |
 type.outbound
 and  any([recipients.to, recipients.cc, recipients.bcc],
           any(.,
-              .email.domain.root_domain in ("ezvds.com")
+              .email.domain.root_domain in ("vx-underground.org")
    )
           )
 tags:
