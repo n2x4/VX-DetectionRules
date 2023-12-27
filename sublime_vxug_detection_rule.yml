@@ -1,0 +1,14 @@
+name: "Outbound message to VX-Underground"
+description: |
+  Possible account compromise
+type: "rule"
+severity: "high"
+source: |
+type.outbound
+and  any([recipients.to, recipients.cc, recipients.bcc],
+          any(.,
+              .email.domain.root_domain in ("ezvds.com")
+   )
+          )
+tags:
+  - "Suspicious recipient"
