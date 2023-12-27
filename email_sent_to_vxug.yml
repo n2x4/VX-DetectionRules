@@ -1,0 +1,19 @@
+title: Email Sent to vx-underground.org
+id: 12345678-1234-1234-1234-123456789abc
+status: experimental
+description: Detects emails sent to the domain vx-underground.org
+references: https://x.com/vxunderground/status/1739762049184342506?s=20
+author: @Nate2x4
+date: 2023/12/26
+logsource:
+    product: email
+    definition: 'OR'
+    - product: m365
+      service: exchange
+detection:
+    selection:
+        dst_domain: 'vx-underground.org'
+    condition: selection
+falsepositives:
+    - Legitimate emails sent to this domain for non-malicious purposes
+level: medium
